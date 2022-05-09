@@ -39,6 +39,7 @@ def addKey(s1, s2):
 
 
 def nibble_substitution(sbox, s):
+  # Nibble substitution function
   return [sbox[e] for e in s]
 
 
@@ -53,6 +54,7 @@ def sub2Nib(b):
 
 
 def keyExp(key):
+  # Generate 3 round keys
   Rcon1, Rcon2 = 0b10000000, 0b00110000
   w[0] = (key & 0xff00) >> 8
   w[1] = key & 0x00ff

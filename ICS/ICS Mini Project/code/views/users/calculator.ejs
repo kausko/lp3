@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+</head>
+<body>
+	<form id="calc-form">
+		<input id="calc-input" type="text" placeholder="Enter Math Expression here" />
+		<button type="submit">Submit</button>
+	</form>
+	<code id="calc-output"></code>
+	<script>
+		const ip = document.getElementById("calc-input")
+		const op = document.getElementById("calc-output")
+		const frm = document.getElementById("calc-form")
+		frm.addEventListener("submit", function (ev) {
+			ev.preventDefault()
+			ev.stopPropagation()
+			const res = eval(ip.value)
+			op.innerText = res
+		})
+	</script>
+</body>
+</html>
